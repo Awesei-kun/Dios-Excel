@@ -6,6 +6,10 @@ function main(client, data){
 	if(cmdcheck(data) == true){
 		let args = data.content.split(' ');
 		
+		if(args[1]=="pyramid"){
+			require("../utils/Pyramid.js")(client, data, args);
+		}
+
 		if(args[1]=="log"){
 			// Export unfinished
 			require("../utils/Spy.js").log(messages);
