@@ -17,7 +17,13 @@ function main(client, data){
 
 	} else {
 		// Log the chat for some spying
-		require("../utils/Spy.js").main(client, data, messages);
+		if(data.embeds.length > 0){
+			data.embeds.forEach((embed) => {
+				console.dir(embed);
+				})
+		} else {
+			require("../utils/Spy.js").main(client, data, messages);
+			}
 		}
 }
 
